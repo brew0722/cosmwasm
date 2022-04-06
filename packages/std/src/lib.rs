@@ -73,6 +73,8 @@ pub use crate::uuid::{new_uuid, Uuid};
 mod exports;
 #[cfg(target_arch = "wasm32")]
 mod imports;
+#[cfg(target_arch = "wasm32")]
+mod global_api;
 
 pub mod memory; // Used by exports and imports only. This assumes pointers are 32 bit long, which makes it untestable on dev machines.
 
@@ -80,6 +82,8 @@ pub mod memory; // Used by exports and imports only. This assumes pointers are 3
 pub use crate::exports::{do_execute, do_instantiate, do_migrate, do_query, do_reply, do_sudo};
 #[cfg(target_arch = "wasm32")]
 pub use crate::imports::{ExternalApi, ExternalQuerier, ExternalStorage};
+#[cfg(target_arch = "wasm32")]
+pub use crate::global_api::GlobalApi;
 
 #[cfg(all(feature = "stargate", target_arch = "wasm32"))]
 mod ibc_exports;

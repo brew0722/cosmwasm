@@ -40,6 +40,7 @@ extern "C" {
     fn db_next(iterator_id: u32) -> u32;
 
     fn addr_validate(source_ptr: u32) -> u32;
+
     fn addr_canonicalize(source_ptr: u32, destination_ptr: u32) -> u32;
     fn addr_humanize(source_ptr: u32, destination_ptr: u32) -> u32;
 
